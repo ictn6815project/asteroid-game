@@ -59,6 +59,8 @@
 
 [![Project Name Screen Shot][project-screenshot]](https://example.com)
 
+A simple implementation of the classic Asteroids game that can be played from your browser.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
