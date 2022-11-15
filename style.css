@@ -18,11 +18,12 @@ nav {
 	  width: 100%;        
 }
 
-ul { list-style-type: none;
-	 margin: 0;
-     padding: 0;
-     overflow: hidden;
-     background-color: #000000;
+ul { 
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
      
 }
 li a { display: block;
@@ -63,9 +64,7 @@ nav a:hover {
    	font-family: Arial, sans-serif;
 } 
 
-#nav-tab {
-		
-}
-.tab-pane {
+.tab-pane, .tabe-pane ul {
 	background: white;
 }
+
