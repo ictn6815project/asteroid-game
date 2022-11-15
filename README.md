@@ -57,9 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+[![Project Name Screen Shot][project-screenshot]](https://example.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,9 +135,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## DEVELOPERS
 
 Cau Thoong - thoongc12@students.ecu.edu
+
 Elisabeth Heath - heathe19@students.ecu.edu
+
 Stephen Umland - umlands05@students.ecu.edu
+
 Tony Parker - parkeran13@students.ecu.edu
+
 YaYa Jenkins - jenkinsy22@students.ecu.edu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -175,7 +177,7 @@ Below is a list resources we find helpful and would like to give credit to.
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]:
+[license-url]: #
 [project-screenshot]: images/screenshot.png
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
