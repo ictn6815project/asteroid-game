@@ -64,11 +64,25 @@ nav a:hover {
    	padding: 1em;
 } 
 
+#nav-tab a {
+    text-decoration: none;
+}
+#nav-tab a:link {
+    color: black;
+}
+
+#nav-tab a:visited {
+    color: black;
+}
+#nav-tab a:hover {
+    color: #F28C28;
+}	
+
 .tab-pane {
-	background: white;
+	text-align: left;
 }
 
 .tab-pane ul {
-	list-style-type: space-counter;
+	list-style-type: disc;
 	background: white !important;
 }
