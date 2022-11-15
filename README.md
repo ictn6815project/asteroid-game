@@ -15,8 +15,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="#">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ictn6815project/asteroid-game">
+    <img src="https://github.com/ictn6815project/asteroid-game/images/logo.png" alt="Logo" width="100%" height="auto">
   </a>
 
   <h3 align="center"> ICTN 6815 Project Team 2 </h3>
@@ -24,7 +24,7 @@
   <p align="center">
     An awesome web-based game!
     <br />
-    <a href="">View Demo</a>
+    <a href="https://github.com/ictn6815project/asteroid-game">View Demo</a>
     ·
     <a href="https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no">Report Bug</a>
   </p>
@@ -166,15 +166,15 @@ Below is a list resources we find helpful and would like to give credit to.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/ictn6815project/asteroid-game.svg?style=for-the-badge
 [contributors-url]: https://github.com/ictn6815project/asteroid-game/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/ictn6815project/asteroid-game.svg?style=for-the-badge
 [forks-url]: https://github.com/ictn6815project/asteroid-game/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/ictn6815project/asteroid-game.svg?style=for-the-badge
 [stars-url]: https://github.com/ictn6815project/asteroid-game/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/ictn6815project/asteroid-game.svg?style=for-the-badge
 [issues-url]: https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/ictn6815project/asteroid-game.svg?style=for-the-badge
 [license-url]: https://github.com/ictn6815project/asteroid-game/license.txt
 [project-screenshot]: images/screenshot.png
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
