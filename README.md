@@ -15,7 +15,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ictn6815project/asteroid-game">
+  <a href="https://ictn6815project.github.io/asteroid-game/index.html">
     <img src="https://github.com/ictn6815project/asteroid-game/blob/main/Images/Logo.PNG" alt="Logo" width="100%" height="auto">
   </a>
 
@@ -24,7 +24,7 @@
   <p align="center">
     An awesome web-based game!
     <br />
-    <a href="https://github.com/ictn6815project/asteroid-game">View Demo</a>
+    <a href="https://ictn6815project.github.io/asteroid-game/index.html">View Demo</a>
     ·
     <a href="https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no">Report Bug</a>
   </p>
