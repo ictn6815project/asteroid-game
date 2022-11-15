@@ -63,3 +63,9 @@ nav a:hover {
    	font-family: Arial, sans-serif;
 } 
 
+#nav-tab {
+		
+}
+.tab-pane {
+	background: white;
+}
