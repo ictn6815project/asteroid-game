@@ -26,7 +26,7 @@
     <br />
     <a href="">View Demo</a>
     ·
-    <a href="/issues">Report Bug</a>
+    <a href="https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no">Report Bug</a>
   </p>
 </div>
 
@@ -77,8 +77,6 @@
 
 No installation needed.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -98,7 +96,7 @@ Add screenshots, code examples or demo later.
 - [ ] Game Testing
 - [ ] Project Submission
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,15 +132,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- Developers -->
 ## DEVELOPERS
 
-Cau Thoong - thoongc12@students.ecu.edu
+Cau Thoong, thoongc12@students.ecu.edu
 
-Elisabeth Heath - heathe19@students.ecu.edu
+Elisabeth Heath, heathe19@students.ecu.edu
 
-Stephen Umland - umlands05@students.ecu.edu
+Stephen Umland, umlands05@students.ecu.edu
 
-Tony Parker - parkeran13@students.ecu.edu
+Tony Parker, parkeran13@students.ecu.edu
 
-YaYa Jenkins - jenkinsy22@students.ecu.edu
+YaYa Jenkins, jenkinsy22@students.ecu.edu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,15 +167,15 @@ Below is a list resources we find helpful and would like to give credit to.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[contributors-url]: https://github.com/ictn6815project/asteroid-game/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-url]: https://github.com/ictn6815project/asteroid-game/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/ictn6815project/asteroid-game/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-url]: https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: #
+[license-url]: https://github.com/ictn6815project/asteroid-game/license.txt
 [project-screenshot]: images/screenshot.png
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
