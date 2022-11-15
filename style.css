@@ -6,6 +6,7 @@ body {
 	background-repeat: no-repeat;
 	background-color: #FFFFFF;
 	color: black;
+	font-family: 'Orbitron', sans-serif;
 }
 
 h1 { 
@@ -61,7 +62,6 @@ nav a:hover {
    	width: 80% ; 
    	text-align: center;
    	padding: 1em;
-   	font-family: Arial, sans-serif;
 } 
 
 .tab-pane {
