@@ -1,0 +1,62 @@
+body { background-image: url(webb.png);
+	   background-attachment: fixed;
+	   background-repeat: no-repeat;
+	   background-color: #FFFFFF;
+	   color: #FFFFFF;
+	   font-family: Arial, sans-serif;
+}
+
+h1 { border-radius: 25px;
+	 text-align: center;
+	 font-family: Arial, sans-serif;
+}
+
+nav { font-weight: bold;
+	  width: 100%;
+          
+}
+
+ul { list-style-type: none;
+	 margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #000000;
+     
+}
+li a { display: block;
+	   text-align: center;
+	   padding: 14px 16px;
+	   text-decoration: none;
+	   display: inline;
+	   float: left;
+}
+
+dt { font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+}
+nav a:link     {
+    color: #FFFFFF;
+}
+
+nav a:visited {
+    color: #FFFFFF;
+}
+nav a:hover {
+    color: #0000FF;
+}
+
+#wrapper { background-image: linear-gradient(#000000, #FFFFFF);
+		   border-radius: 25px;
+		   min-width: 1000px;
+		   max-width: 1080px;
+		   margin-left: auto ;
+		   margin-right: auto;
+		   width: 80% ; 
+		   text-align: center;
+		   padding: 1em;
+		   font-family: Arial, sans-serif;
+} 
+

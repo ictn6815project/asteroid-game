@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="asteroid.ico" type="image/gif" sizes="16x16">
+<title>Team Information</title>
+<meta charset="utf-8">
+</head>
+<link rel= "stylesheet" href= "style.css">
+<body>
+	<div id="wrapper">
+		  <h1>Game Design Team</h1>
+			<nav>
+			   <ul>
+				<li><a href="index.html">Play the Game</a></li> 
+				<li><a href="Controls.html">Controls</a></li> 
+				<li><a href="Team.html">Meet the Team</a></li> 
+			   </ul>
+			</nav>
+		<h1>Meet Our Team</h1>
+		<h2>[Team Info Here]</h2>
+	</div>
+</body>
+</html>
