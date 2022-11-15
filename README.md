@@ -67,8 +67,8 @@ A simple implementation of the classic Asteroids game that can be played from yo
 
 ### Built With
 
-* [![HTML5][HTML5]][Html-url]
-* [![CSS][CSS]][Css-url]
+* [![HTML5][HTML5.com]][HTML5-url]
+* [![CSS][CSS.com]][CSS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
@@ -132,7 +132,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- Developers -->
-## DEVELOPERS
+## Developers 
 
 Cau Thoong, thoongc12@students.ecu.edu
 
@@ -178,7 +178,11 @@ Below is a list resources we find helpful and would like to give credit to.
 [issues-url]: https://github.com/ictn6815project/asteroid-game/milestones?with_issues=no
 [license-shield]: https://img.shields.io/github/license/ictn6815project/asteroid-game.svg?style=for-the-badge
 [license-url]: https://github.com/ictn6815project/asteroid-game/license.txt
-[project-screenshot]: images/screenshot.png
+[project-screenshot]: Images/screenshot.png
+[CSS.com]: https://img.shields.io/badge/CSS3-0000FF?style=for-the-badge&logo=CSS3&logoColor=white
+[CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[HTML5.com]: https://img.shields.io/badge/HTML5-FF5733?style=for-the-badge&logo=HTML5&logoColor=white
+[HTML5-url]: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
