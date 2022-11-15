@@ -64,7 +64,11 @@ nav a:hover {
    	font-family: Arial, sans-serif;
 } 
 
-.tab-pane, .tab-pane ul {
+.tab-pane {
 	background: white;
 }
 
+.tab-pane ul {
+	list-style-type: space-counter;
+	background: white !important;
+}
