@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ictn6815project/asteroid-game">
-    <img src="https://github.com/ictn6815project/asteroid-game/images/logo.png" alt="Logo" width="100%" height="auto">
+    <img src="https://github.com/ictn6815project/asteroid-game/blob/main/Images/Logo.PNG" alt="Logo" width="100%" height="auto">
   </a>
 
   <h3 align="center"> ICTN 6815 Project Team 2 </h3>
