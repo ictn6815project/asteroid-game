@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
+* {
+	font-family: 'Orbitron', sans-serif !important;
+}
 body { 
 	background-image: url(Images/background-image.png);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-color: #FFFFFF;
 	color: black;
-	font-family: 'Orbitron', sans-serif;
 }
 
 h1 { 
@@ -22,9 +23,9 @@ nav {
 ul { 
 	list-style-type: none;
 	margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000000;     
+	padding: 0;
+	overflow: hidden;
+	background-color: #000000;     
 }
 
 li a { display: block;
@@ -80,8 +81,7 @@ nav a:hover {
 }	
 .tab-content { padding : 5px 15px; }
 .tab-pane { text-align: left; }
-.tab-pane ul, .tab-pane li {
+.tab-pane ul {
 	list-style-type: disc;
-	background: white !important;
-	color: black;
+	background: white;
 }
