@@ -15,41 +15,10 @@ h1 {
  	text-align: center;
 }
 
-nav { 
-	font-weight: bold;
-	  width: 100%;        
-}
-
-ul { 
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #000000;     
-}
-
-li a { display: block;
-	   text-align: center;
-	   padding: 14px 16px;
-	   text-decoration: none;
-	   display: inline;
-	   float: left;
-}
-
 dt { font-weight: bold;
 }
 
-nav a {
-    text-decoration: none;
-}
-nav a:link     {
-    color: #FFFFFF;
-}
-
-nav a:visited {
-    color: #FFFFFF;
-}
-nav a:hover {
+#top-nav a:hover {
     color: #F28C28;
 }
 
