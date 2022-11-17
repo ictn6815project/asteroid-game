@@ -32,7 +32,7 @@ dt { font-weight: bold;
    	width: 80% ; 
    	text-align: center;
    	padding: 1em;
-	ont-family: 'Orbitron', sans-serif;
+	font-family: 'Orbitron', sans-serif;
 } 
 
 #nav-tab a {
@@ -47,6 +47,7 @@ dt { font-weight: bold;
 }
 #nav-tab a:hover {
     color: #F28C28;
+    background-color: #F2F2F4;	
 }	
 .tab-content { padding : 5px 15px; }
 .tab-pane { text-align: left; }
