@@ -29,8 +29,7 @@
 body { 
 	background-image: url(Images/background-image.png);
 	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-color: #FFFFFF;
+	background-repeat: repeat;
 	color: black;
 }
 
