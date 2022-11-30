@@ -32,27 +32,25 @@
 		<br/>
 	<div class="row">
 		<div class="col-sm-12">
-		  <h2>Enjoy the Game!</h2>	
-		  	<div>
-				<div class="fixed select-none text-dark text-sm ml-2 mt-1">
-				  <span>
-					Score:
-				  </span>
-				  <span id="scoreEl">
-					0
-				  </span>
-				</div>
+		  <h2>Enjoy the Game!</h2>	  	
+			<div class="fixed text-dark text-sm" style="user-select: none; margin-left: 0.5rem; margin-top: 0.25rem;">
+			  <span>
+				Score:
+			  </span>
+			  <span id="scoreEl">
+				0
+			  </span>
 			</div>
 			<div id="modalEl" class="fixed inset-0 flex items-center justify-center">
 			  <div class="bg-dark max-w-md w-50 p-6 text-center">
-				<h1 id="bigScore" class="text-4xl font-bold leading-none text-white">0</h1>
-				<p class="text-sm text-white mb-4" style="font-weight: 700;">Points</p>
+				<h1 id="bigScore" class="text-white" style="line-height: 1; font-size: 2.25rem; font-weight: bold;">0</h1>
+				<p class="text-sm text-white" style="font-weight: 700; margin-bottom: 1rem;">Points</p>
 				<div>
 				  <button id="startGameBtn" class="btn btn-primary">Start Game</button>
 				</div>
 			  </div>
 			</div>
-		  <canvas width="720" height="auto"></canvas>
+		  <canvas width="1080" height="auto"></canvas>
 		</div>
 	</div>
 </div>
@@ -63,8 +61,8 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = Width;
+canvas.height = Height;
 
 const scoreEl = document.querySelector('#scoreEl');
 const startGameButton = document.querySelector('#startGameBtn');
