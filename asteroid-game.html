@@ -49,6 +49,22 @@
 			  }
 			}
 			
+			function loop(src) {
+			  this.loop = document.createElement("audio");
+			  this.loop.src = src;
+			  this.loop.setAttribute("preload", "auto");
+			  this.loop.setAttribute("controls", "none");
+			  this.loop.setAttribute("loop", "true");	
+			  this.loop.style.display = "none";
+			  document.body.appendChild(this.loop);
+			  this.play = function(){
+				this.loop.play();
+			  }
+			  this.stop = function(){
+				this.loop.pause();
+			  }
+			}
+			
 			function startGame()
 			{
 				myGamePiece = new component(32, 32, "Images/ship.png", 640, 480, "image", 0);
@@ -60,7 +76,7 @@
 				expSound = new sound("explosion.wav");
 				fireSound = new sound("fire.wav");
 				thrustSound = new sound("thrust.wav");
-				themeSong = new sound("chill-pede.mp3");
+				themeSong = new loop("chill-pede.mp3");
 				themeSong.play();
 				
 				myGameArea.start();		
