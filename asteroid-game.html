@@ -31,6 +31,7 @@
 			var fireSound;
 			var expSound;
 			var thrustSound;
+			var themeSong;
 			
 			function sound(src) {
 			  this.sound = document.createElement("audio");
@@ -58,6 +59,9 @@
 				expSound = new sound("explosion.wav");
 				fireSound = new sound("fire.wav");
 				thrustSound = new sound("thrust.wav");
+				themeSong = new sound("chill-pede.mp3");
+				themesong.play();
+				
 				myGameArea.start();		
 				
 				document.getElementById('btnStart').style.visibility= 'hidden';
