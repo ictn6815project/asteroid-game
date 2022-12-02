@@ -9,8 +9,7 @@
 			}
 		</style>
 	</head>
-	<body>
-		<button type="button" onclick="startGame()" class="btn btn-primary" id="btnStart">Start Game</button>
+	<body onload="startGame()">
 		<script>
 			const asteroids = [];
 			const smallAsteroids = [];
@@ -430,6 +429,8 @@
 				else
 				{
 					loss.updateLoss();
+					myGameArea.stop();
+					return;
 				}
 				myGamePiece.update();
 				for(let i = 0; i < asteroids.length; i++)
