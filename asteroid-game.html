@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+		canvas 
+			{
+				border:1px solid #d3d3d3;
+				background-image: url("space.png");
+			}
+		</style>
+	</head>
+	<body onload="startGame()">
+		<script>
+			const asteroids = [];
+			const smallAsteroids = [];
+			var myGamePieceSpeed = 10;
+			var numAsteroids = 10;
+			var asteroidSpeed = 10;
+			var myGamePiece, bullet, asteroid, exploding; 
+			const bullets = [];
+			const explosions = [];
+			var bulletSpeed = 15;
+			var score = 0;
+			var myScore;
+			var delay = 0;
+			var maxDelay = 2;
+			var i = 0;
+			var destroyed = false;
+			var loss;
+			
+			function startGame()
+			{
+				myGamePiece = new component(32, 32, "ship.png", 640, 480, "image", 0);
+				myScore = new UIText("30px", "Arial", "white", 580, 50, "Score " + score);
+				for(let i = 0; i < numAsteroids; i++)
+				{
+					asteroids.push(new Asteroid(64, 64, "asteroid_big.png", 1280 * Math.random(), 960 * Math.random(), 360 * Math.random()));
+				}
+				myGameArea.start();				
+			}
+			
+			var myGameArea =
+			{
+				canvas: document.createElement("canvas"),
+				start: function()
+				{
+					this.canvas.width = 1080;
+					this.canvas.height = 720;
+					gameHeight = this.canvas.height;
+					gameWidth = this.canvas.width;
+					this.context = this.canvas.getContext("2d");
+					document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+					this.interval = setInterval(updateGameArea, 60);
+					window.addEventListener('keydown', function (e) 
+					{
+						myGameArea.keys = (myGameArea.keys || []);
+						myGameArea.keys[e.keyCode] = true;
+					})
+					window.addEventListener('keyup', function (e) 
+					{
+					    myGameArea.keys[e.keyCode] = false;
+					})
+				},
+				clear: function()
+				{
+					this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+				}
+			}
+
+			function component(width, height, sprite, x, y, type, angle)
+			{
+				this.type = type;
+				if (type == "image") 
+				{
+					this.image = new Image();
+					this.image.src = sprite;
+				}
+				else
+				{
+					ctx.fillStyle = sprite;
+					ctx.fillRect(this.x, this.y, 1, 2);
+				}
+				this.width = width;
+				this.height = height;
+				this.angle = angle;
+				this.moveAngle = 5;
+				this.speedX = 0;
+				this.speedY = 0;
+				this.x = x;
+				this.y = y;
+				
+				this.update = function()
+				{
+					ctx = myGameArea.context;
+					if (type == "image") 
+					{
+						ctx.save();
+						ctx.translate(this.x, this.y);        
+						ctx.rotate(this.angle);
+						ctx.clearRect(this.x, this.y, this.width, this.height);
+						ctx.drawImage(this.image, this.width / -2, this.height / -2, this.width, this.height);     
+						ctx.restore(); 
+						if(i == 8)
+						{
+							i = 0;
+						}
+						else
+						{
+							i++;
+						}
+					} 
+					else 
+					{
+					 ctx.clearRect(this.x, this.y, this.width, this.height);
+					 ctx.fillRect(this.x, this.y, this.width, this.height);
+					}
+				}	
+					
+				this.move = function()
+				{
+					if (myGameArea.keys && myGameArea.keys[37]) 
+					{
+						this.angle -= this.moveAngle * Math.PI / 180;	
+					}
+					else if (myGameArea.keys && myGameArea.keys[39]) 
+					{
+						this.angle += this.moveAngle * Math.PI / 180; 
+					}
+					else 
+					{
+						myGamePiece.speedX = 0;
+					}
+					
+					if (myGameArea.keys && myGameArea.keys[38]) 
+					{
+						myGamePiece.speedX = -myGamePieceSpeed;
+						myGamePiece.speedY = -myGamePieceSpeed;
+					}
+					else if (myGameArea.keys && myGameArea.keys[40]) 
+					{
+						myGamePiece.speedX = myGamePieceSpeed;
+						myGamePiece.speedY = myGamePieceSpeed;
+					}
+					else 
+					{
+						myGamePiece.speedY = 0;
+					}
+					if (myGameArea.keys && myGameArea.keys[32] && delay <= 0) 
+					{ 
+						bullets.push(new Bullet(4, 8, this.x, this.y, this.angle));
+						
+					}
+					if (myGameArea.keys && myGameArea.keys[72]) 
+					{ 
+						myGamePiece.x = 1280 * Math.random();
+						myGamePiece.y = 960 * Math.random();	
+					}
+				}
+				
+				this.newPos = function()
+				{
+					if(this.y >= gameHeight)
+					{
+						this.y -= gameHeight;
+					}
+					else if(this.y <= -32)
+					{
+						this.y += gameHeight;
+					}
+					else if(this.x <= -32)
+					{
+						this.x += gameWidth;
+					}
+					else if(this.x >= gameWidth)
+					{
+						this.x -= gameWidth;
+					}
+					else
+					{
+						this.x -= this.speedX * Math.sin(this.angle);
+						this.y += this.speedY * Math.cos(this.angle);
+					}
+				}
+				
+				this.crashWith = function(otherobj) 
+				{
+					if (rectIntersect(this.x, this.y, this.width, this.height, otherobj.x, otherobj.y, otherobj.width, otherobj.height))
+					{
+						destroyed = true;
+						Destroy(myGamePiece);
+						loss = new UIText("100px", "Arial", "white", 420, 800, "Game Over");
+						myGamePiece.x = -1;
+						myGamePiece.y = -1;
+					}
+					return destroyed;
+				}		
+			}
+			
+			function UIText(width, height, color, x, y)
+			{
+				this.width = width;
+				this.height = height;
+				this.x = x;
+				this.y = y;
+				
+				this.updateScore = function()
+				{
+					ctx = myGameArea.context;
+					ctx.font = width + " " + height;
+					ctx.fillStyle = color;
+					ctx.fillText("Score: " + score, this.x, this.y);
+				}
+				
+				this.updateLoss = function()
+				{
+					ctx = myGameArea.context;
+					ctx.font = width + " " + height;
+					ctx.fillStyle = color;
+					ctx.fillText("You Lose!", this.x, this.y);
+				}
+			}
+			
+			function Asteroid(width, height, sprite, x, y, angle)
+			{
+				this.image = new Image();
+				this.image.src = sprite;
+				this.width = width;
+				this.height = height;
+				this.angle = angle;
+				this.moveAngle = 5;
+				this.speedX = 0;
+				this.speedY = 0;
+				this.x = x;
+				this.y = y;
+				
+				this.update = function()
+				{
+					ctx = myGameArea.context;
+					ctx.save();
+					ctx.translate(this.x, this.y);        
+					ctx.rotate(this.angle);
+					ctx.clearRect(this.x, this.y, this.width, this.height);
+					ctx.drawImage(this.image, this.width / -2, this.height / -2, this.width, this.height);     
+					ctx.restore(); 
+				}	
+							
+				this.moveAsteroid = function()
+				{
+					this.angle += 1 * Math.PI / 180;	
+					this.x += asteroidSpeed * Math.sin(this.angle);
+				    this.y -= asteroidSpeed * Math.cos(this.angle);
+				}
+							
+				this.newPos = function()
+				{
+					if(this.y >= gameHeight)
+					{
+						this.y -= gameHeight;
+					}
+					else if(this.y <= -32)
+					{
+						this.y += gameHeight;
+					}
+					else if(this.x <= -32)
+					{
+						this.x += gameWidth;
+					}
+					else if(this.x >= gameWidth)
+					{
+						this.x -= gameWidth;
+					}
+					else
+					{
+						this.x -= this.speedX * Math.sin(this.angle);
+						this.y += this.speedY * Math.cos(this.angle);
+					}
+				}	
+			}
+
+			function Explosion(width, height, sprite, x, y, type)
+			{
+				this.type = type;
+				if (type == "anim") 
+				{
+					this.image = new Image();
+					this.image.src = sprite;
+				}
+				this.width = width;
+				this.height = height;
+				this.speedX = 0;
+				this.speedY = 0;
+				this.x = x;
+				this.y = y;
+				
+				this.update = function()
+				{
+					ctx = myGameArea.context;
+					if (type == "anim") 
+					{
+						ctx.clearRect(this.x, this.y, this.width, this.height);
+						ctx.drawImage(this.image, i * 64, 0, 64, 64, this.x, this.y, this.width, this.height);
+						if(i == 8)
+						{
+							i = 0;
+						}
+						else
+						{
+							i++;
+						}
+					} 
+					else 
+					{
+					  ctx.fillStyle = color;
+					  ctx.fillRect(this.x, this.y, this.width, this.height);
+					}
+				} 
+			}
+			
+			function Bullet(width, height, x, y, angle)
+			{
+				ctx.fillStyle = "red";
+				ctx.fillRect(this.x, this.y, 1, 2);
+				this.width = width;
+				this.height = height;
+				this.angle = angle;
+				this.moveAngle = 5;
+				this.x = x;
+				this.y = y;
+				
+				this.update = function()
+				{
+					ctx = myGameArea.context;
+					ctx.clearRect(this.x, this.y, this.width, this.height);
+					ctx.fillRect(this.x, this.y, this.width, this.height);
+				}	
+									
+				this.moveBullet = function()
+				{
+					this.x += bulletSpeed * Math.sin(this.angle);
+					this.y -= bulletSpeed * Math.cos(this.angle);
+				}
+				
+				this.crashWith = function(otherobj) 
+				{
+					for(let i = 0; i < otherobj.length; i++)
+					{
+						if (rectIntersect(this.x, this.y, this.width, this.height, otherobj[i].x, otherobj[i].y, otherobj[i].width, otherobj[i].height))
+						{
+							score++;
+							smallAsteroids.push(new Asteroid(32, 32, "asteroid_small.png", otherobj[i].x, otherobj[i].y + 32, 360 * Math.random()));
+							smallAsteroids.push(new Asteroid(32, 32, "asteroid_small.png", otherobj[i].x, otherobj[i].y + 64, 360 * Math.random()));
+							Destroy(otherobj[i]);
+							asteroids.splice(i, 1);
+						}
+					}
+				}
+
+				this.smallCrashWith = function(otherobj) 
+				{
+					for(let i = 0; i < otherobj.length; i++)
+					{
+						if (rectIntersect(this.x, this.y, this.width, this.height, otherobj[i].x, otherobj[i].y, otherobj[i].width, otherobj[i].height))
+						{
+							score++;
+							Destroy(otherobj[i]);
+							smallAsteroids.splice(i, 1);
+						}
+					}
+				}	
+			}
+			
+			function rectIntersect (x1, y1, w1, h1, x2, y2, w2, h2)
+			{
+				// Check x and y for overlap
+				if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2)
+				{
+					return false;
+				}
+				return true;
+			}
+			
+			function Destroy (toDestroy)
+			{
+				ctx = myGameArea.context;
+				toDestroy.image.src = "black.png";
+				explosions.push(new Explosion(64, 64, "Explosion_strip9.png", toDestroy.x, toDestroy.y, "anim"));
+				
+			}
+			
+			function updateGameArea()
+			{
+				var status = true;
+				myGameArea.clear();
+				myScore.updateScore();
+				if(!destroyed)
+				{
+					myGamePiece.move();
+					myGamePiece.newPos();
+				}
+				else
+				{
+					loss.updateLoss();
+				}
+				myGamePiece.update();
+				for(let i = 0; i < asteroids.length; i++)
+				{
+					asteroids[i].moveAsteroid();
+					asteroids[i].newPos();	
+					asteroids[i].update();
+					status = myGamePiece.crashWith(asteroids[i]);
+				}
+				for(let i = 0; i < smallAsteroids.length; i++)
+				{
+					smallAsteroids[i].moveAsteroid();
+					smallAsteroids[i].newPos();	
+					smallAsteroids[i].update();
+					status = myGamePiece.crashWith(smallAsteroids[i]);
+				}
+				for(let i = 0; i < explosions.length; i++)
+				{
+						explosions[i].update();
+				}
+				for(let i = 0; i < bullets.length; i++)
+				{
+					bullets[i].moveBullet();
+			    	bullets[i].update();
+				} 
+				bullets[i].crashWith(asteroids);
+				bullets[i].smallCrashWith(smallAsteroids);
+				if(delay == maxDelay)
+				{
+					delay = 0;
+				}
+				else
+				{
+					delay++;
+				}
+			}
+		
+		</script>	
+	</body>
+</html>	
