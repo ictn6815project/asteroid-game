@@ -93,8 +93,8 @@ Add screenshots, code examples or demo later.
 ## Roadmap
 
 - [x] Github Setup
-- [ ] Game Design and Layout
-- [ ] Game Sprites and Controls
+- [x] Game Design and Layout
+- [x] Game Sprites and Controls
 - [ ] Game Testing
 - [ ] Project Submission
 
