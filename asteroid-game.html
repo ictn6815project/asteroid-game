@@ -14,12 +14,12 @@
 			const asteroids = [];
 			const smallAsteroids = [];
 			var myGamePieceSpeed = 10;
-			var numAsteroids = 10;
-			var asteroidSpeed = 10;
+			var numAsteroids = 5;
+			var asteroidSpeed = 5;
 			var myGamePiece, bullet, asteroid, exploding; 
 			const bullets = [];
 			const explosions = [];
-			var bulletSpeed = 15;
+			var bulletSpeed = 10;
 			var score = 0;
 			var myScore;
 			var delay = 0;
@@ -71,7 +71,7 @@
 				canvas: document.createElement("canvas"),
 				start: function()
 				{
-					this.canvas.width = 960;
+					this.canvas.width = 1080;
 					this.canvas.height = 540;
 					gameHeight = this.canvas.height;
 					gameWidth = this.canvas.width;
