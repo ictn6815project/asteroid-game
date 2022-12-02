@@ -6,7 +6,7 @@
 		canvas 
 			{
 				border:1px solid #d3d3d3;
-				background-image: url("space.png");
+				background-image: url("Images/space.png");
 			}
 		</style>
 	</head>
@@ -31,11 +31,11 @@
 			
 			function startGame()
 			{
-				myGamePiece = new component(32, 32, "ship.png", 640, 480, "image", 0);
+				myGamePiece = new component(32, 32, "Images/ship.png", 640, 480, "image", 0);
 				myScore = new UIText("30px", "Arial", "white", 580, 50, "Score " + score);
 				for(let i = 0; i < numAsteroids; i++)
 				{
-					asteroids.push(new Asteroid(64, 64, "asteroid_big.png", 1280 * Math.random(), 960 * Math.random(), 360 * Math.random()));
+					asteroids.push(new Asteroid(64, 64, "Images/asteroid_big.png", 1280 * Math.random(), 960 * Math.random(), 360 * Math.random()));
 				}
 				myGameArea.start();				
 			}
@@ -217,7 +217,7 @@
 					ctx = myGameArea.context;
 					ctx.font = width + " " + height;
 					ctx.fillStyle = color;
-					ctx.fillText("You Lose!", this.x, this.y);
+					ctx.fillText("Try Again!", this.x, this.y);
 				}
 			}
 			
@@ -348,8 +348,8 @@
 						if (rectIntersect(this.x, this.y, this.width, this.height, otherobj[i].x, otherobj[i].y, otherobj[i].width, otherobj[i].height))
 						{
 							score++;
-							smallAsteroids.push(new Asteroid(32, 32, "asteroid_small.png", otherobj[i].x, otherobj[i].y + 32, 360 * Math.random()));
-							smallAsteroids.push(new Asteroid(32, 32, "asteroid_small.png", otherobj[i].x, otherobj[i].y + 64, 360 * Math.random()));
+							smallAsteroids.push(new Asteroid(32, 32, "Images/asteroid_small.png", otherobj[i].x, otherobj[i].y + 32, 360 * Math.random()));
+							smallAsteroids.push(new Asteroid(32, 32, "Images/asteroid_small.png", otherobj[i].x, otherobj[i].y + 64, 360 * Math.random()));
 							Destroy(otherobj[i]);
 							asteroids.splice(i, 1);
 						}
@@ -383,8 +383,8 @@
 			function Destroy (toDestroy)
 			{
 				ctx = myGameArea.context;
-				toDestroy.image.src = "black.png";
-				explosions.push(new Explosion(64, 64, "Explosion_strip9.png", toDestroy.x, toDestroy.y, "anim"));
+				toDestroy.image.src = "Images/black.png";
+				explosions.push(new Explosion(64, 64, "Images/Explosion_strip9.png", toDestroy.x, toDestroy.y, "anim"));
 				
 			}
 			
