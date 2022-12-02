@@ -34,116 +34,14 @@
 		<div class="col-sm-12">
 		  <h2>Enjoy the Game!</h2>
 		  <br />
-			<div class="fixed text-dark text-sm" style="user-select: none; margin-left: 0.5rem; margin-top: 0.25rem;">
-			  <span>
-				Score:
-			  </span>
-			  <span id="scoreEl">
-				0
-			  </span>
-			</div>
-			 <br />
-			 <br />
-			 <br />
-			<div id="modalEl" class="fixed" style=" display: flex; inset: 0; justify-content: center; justify-items: center;">
-			  <div class="bg-dark max-w-md w-50 p-6 text-center">
-				 <br />
-				   <br />
-				<h1 id="bigScore" class="text-white" style="line-height: 1; font-size: 2.25rem; font-weight: bold;">0</h1>
-				<p class="text-sm text-white" style="font-weight: 700; margin-bottom: 1rem;">Points</p>
-				<div>
-				  <button id="startGameBtn" class="btn btn-primary">Start Game</button>
-				</div>
-				 <br />
-				   <br />
-			  </div>
-			</div>
-		  <canvas width="1080" height="720"></canvas>
+		 <br />
+		<iframe src="asteroid-game.html" width="100%" height="auto" style="border:1px solid black;">
+</iframe>
 		</div>
 	</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script>
 
-const canvas = document.querySelector('canvas');
-const c = canvas.getContext('2d');
-
-const scoreEl = document.querySelector('#scoreEl');
-const startGameButton = document.querySelector('#startGameBtn');
-const modalEl = document.querySelector('#modalEl');
-const bigScore = document.querySelector('#bigScore');
-
-class Player {
-  constructor(x, y, radius, color) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.color = color;
-  }
-
-  draw() {
-    c.beginPath();
-    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.fillStyle = this.color;
-    c.fill();
-  }
-}
-	
-const x = canvas.width / 2;
-const y = canvas.height / 2;
-
-let player;
-
-function init() {
-  player = new Player(x, y, 10, 'white');
-//   Init Arrays Here
-  score = 0;
-  scoreEl.innerHTML = score;
-  bigScore.innerHTML = score;
-}
-	
-let isPaused = false
-let animationId;
-let score = 0;
-	
-function animate() {
-  if (isPaused) { return; }
-  animationId = requestAnimationFrame(animate)
-  c.fillStyle = 'rgba(30, 30, 30, 0.1)'
-  c.fillRect(0, 0, canvas.width, canvas.height)
-  player.draw();
-  
-	// ForEach functions start here
-}
-
-// Event Listeners
-addEventListener('click', (event) => {
-  let angle = calculateAngle(player.x, player.y, event.clientX, event.clientY)
-  let velocity = { x: Math.cos(angle * Math.PI / 180) * 5, y: Math.sin(angle * Math.PI / 180) * 5 }
-});
-
-startGameButton.addEventListener('click', (event) => {
-  init();
-// call animate function
-  animate();
-// call other functions
-
-// modal popup 	
-  modalEl.style.display = 'none'
-})
-
-document.body.onkeyup = function (e) {
-  if (e.key == " " ||
-    e.code == "Space" ||
-    e.keyCode == 32
-  ) {
-    isPaused = !isPaused;
-    if (!isPaused) {
-      animate();
-    }
-  }
-}
-</script>
 </body>
 </html>
