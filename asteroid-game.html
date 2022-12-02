@@ -92,6 +92,10 @@
 					    myGameArea.keys[e.keyCode] = false;
 						thrustSound.play();
 					})
+					window.addEventListener('touchmove', function (e) {
+				      myGameArea.x = e.touches[0].screenX;
+				      myGameArea.y = e.touches[0].screenY;
+				    })
 				},
 				clear: function()
 				{
@@ -434,6 +438,10 @@
 				{
 					loss.updateLoss();
 
+				}
+				if (myGameArea.x && myGameArea.y) {
+					myGamePiece.x = myGameArea.x;
+					myGamePiece.y = myGameArea.y;
 				}
 				myGamePiece.update();
 				for(let i = 0; i < asteroids.length; i++)
