@@ -57,7 +57,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Project Name Screen Shot][project-screenshot]](https://example.com)
+  <a href="https://ictn6815project.github.io/asteroid-game/index.html">
+    <img src="https://github.com/ictn6815project/asteroid-game/blob/main/Images/project-screenshot.png" alt="Logo" width="100%" height="auto">
+  </a>
 
 A simple implementation of the classic Asteroids game that can be played from your browser.
 
